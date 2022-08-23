@@ -4,7 +4,9 @@ import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.distinctUntilChanged
+import org.koin.android.annotation.KoinViewModel
 
+@KoinViewModel
 class MainViewModel : ViewModel() {
 
     private val _imagePreviousPosition = MutableLiveData<Int>()
@@ -13,12 +15,12 @@ class MainViewModel : ViewModel() {
     /**
      * Pair: prev position, cur position
      */
-    val positionChange = MediatorLiveData<Pair<Int, Int>>().apply {
+    val positionChange = MediatorLiveData<Pair<Int?, Int?>>().apply {
         addSource(_imagePreviousPosition) {
-            value = Pair(it, value?.second ?: it)
+            value = it to value?.second
         }
         addSource(_imagePosition) {
-            value = Pair(value?.first ?: it, it)
+            value = value?.first to it
         }
     }.distinctUntilChanged()
 

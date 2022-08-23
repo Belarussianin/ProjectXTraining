@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.devtools.ksp'
 }
 
 android {
@@ -32,6 +33,12 @@ android {
     buildFeatures {
         viewBinding true
     }
+
+    applicationVariants.all { variant ->
+        variant.sourceSets.java.each {
+            it.srcDirs += "build/generated/ksp/${variant.name}/kotlin"
+        }
+    }
 }
 
 dependencies {
@@ -44,6 +51,11 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
     implementation 'androidx.fragment:fragment-ktx:1.5.2'
+
+    // DI (Koin)
+    implementation "io.insert-koin:koin-android:$koin_version"
+    implementation "io.insert-koin:koin-annotations:$koin_annotations_version"
+    ksp "io.insert-koin:koin-ksp-compiler:$koin_annotations_version"
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

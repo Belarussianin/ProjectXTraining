@@ -7,7 +7,6 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager2.widget.ViewPager2
 import com.example.projectxtraining.R
 import com.example.projectxtraining.databinding.LoginBinding
 import com.google.android.material.tabs.TabLayout
@@ -88,12 +87,12 @@ class MainActivity : AppCompatActivity() {
 
                 loginMainText.apply {
                     when {
+                        previousPosition == null || currentPosition == null || previousPosition == currentPosition -> {
+                            return@observe
+                        }
                         previousPosition < currentPosition -> {
                             inAnimation = inRight
                             outAnimation = outLeft
-                        }
-                        previousPosition == currentPosition -> {
-                            return@observe
                         }
                         else -> {
                             inAnimation = inLeft
