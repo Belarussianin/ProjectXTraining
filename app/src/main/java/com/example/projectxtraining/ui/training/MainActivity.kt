@@ -1,11 +1,13 @@
 package com.example.projectxtraining.ui.training
 
 import android.os.Bundle
+import android.view.View
 import android.view.animation.AnimationUtils
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.ViewPager2
 import com.example.projectxtraining.R
 import com.example.projectxtraining.databinding.LoginBinding
 import com.google.android.material.tabs.TabLayout
@@ -27,8 +29,17 @@ class MainActivity : AppCompatActivity() {
 
     private fun LoginBinding.bindUI() = this.apply {
         viewPager.apply {
-            overScrollMode = RecyclerView.OVER_SCROLL_NEVER
             adapter = ViewPagerAdapter(supportFragmentManager, lifecycle)
+
+            registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+                override fun onPageSelected(position: Int) {
+                    super.onPageSelected(position)
+
+                    getChildAt(0).apply {
+                        if (this is RecyclerView) setOverScrollMode(View.OVER_SCROLL_NEVER)
+                    }
+                }
+            })
         }
 
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
@@ -59,28 +70,30 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun LoginBinding.subscribeUI() = this.apply {
+
+        val inLeft = AnimationUtils.loadAnimation(
+            this@MainActivity,
+            android.R.anim.slide_in_left
+        )
+        val outRight = AnimationUtils.loadAnimation(
+            this@MainActivity,
+            android.R.anim.slide_out_right
+        )
+        val inRight = AnimationUtils.loadAnimation(
+            this@MainActivity,
+            R.anim.slide_in_right
+        )
+        val outLeft = AnimationUtils.loadAnimation(
+            this@MainActivity,
+            R.anim.slide_out_left
+        )
+
         viewModel.apply {
 
             positionChange.observe(this@MainActivity) { positions ->
                 val (previousPosition, currentPosition) = positions
 
                 loginMainText.apply {
-                    val inLeft = AnimationUtils.loadAnimation(
-                        this@MainActivity,
-                        android.R.anim.slide_in_left
-                    )
-                    val outRight = AnimationUtils.loadAnimation(
-                        this@MainActivity,
-                        android.R.anim.slide_out_right
-                    )
-                    val inRight = AnimationUtils.loadAnimation(
-                        this@MainActivity,
-                        R.anim.slide_in_right
-                    )
-                    val outLeft = AnimationUtils.loadAnimation(
-                        this@MainActivity,
-                        R.anim.slide_out_left
-                    )
                     when {
                         previousPosition < currentPosition -> {
                             inAnimation = inRight
@@ -95,16 +108,16 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
 
-                    resources.apply {
-                        loginMainText.setText(
+                    setText(
+                        resources.getString(
                             when (currentPosition) {
-                                0 -> getString(R.string.login_main_text1)
-                                1 -> getString(R.string.login_main_text2)
-                                2 -> getString(R.string.login_main_text3)
-                                else -> getString(R.string.login_main_text1)
+                                0 -> R.string.login_main_text1
+                                1 -> R.string.login_main_text2
+                                2 -> R.string.login_main_text3
+                                else -> R.string.login_main_text1
                             }
                         )
-                    }
+                    )
                 }
             }
         }
