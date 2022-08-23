@@ -30,16 +30,9 @@ class MainActivity : AppCompatActivity() {
     private fun LoginBinding.bindUI() = this.apply {
         viewPager.apply {
             adapter = ViewPagerAdapter(supportFragmentManager, lifecycle)
-
-            registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
-                override fun onPageSelected(position: Int) {
-                    super.onPageSelected(position)
-
-                    getChildAt(0).apply {
-                        if (this is RecyclerView) setOverScrollMode(View.OVER_SCROLL_NEVER)
-                    }
-                }
-            })
+            getChildAt(0).apply {
+                if (this is RecyclerView) setOverScrollMode(View.OVER_SCROLL_NEVER)
+            }
         }
 
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
