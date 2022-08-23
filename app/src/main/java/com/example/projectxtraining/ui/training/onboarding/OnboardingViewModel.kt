@@ -1,4 +1,4 @@
-package com.example.projectxtraining.ui.training
+package com.example.projectxtraining.ui.training.onboarding
 
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
@@ -7,7 +7,7 @@ import androidx.lifecycle.distinctUntilChanged
 import org.koin.android.annotation.KoinViewModel
 
 @KoinViewModel
-class MainViewModel : ViewModel() {
+class OnboardingViewModel : ViewModel() {
 
     private val _imagePreviousPosition = MutableLiveData<Int>()
     private val _imagePosition = MutableLiveData<Int>()

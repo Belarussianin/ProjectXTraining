@@ -1,4 +1,4 @@
-package com.example.projectxtraining.ui.training
+package com.example.projectxtraining.ui.training.onboarding
 
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
@@ -8,7 +8,7 @@ import com.example.projectxtraining.R
 class ViewPagerAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
     FragmentStateAdapter(fragmentManager, lifecycle) {
 
-    override fun getItemCount(): Int = Companion.NUM_TABS
+    override fun getItemCount(): Int = NUM_TABS
 
     override fun createFragment(position: Int) = ImageFragment.getInstance(
         when (position) {

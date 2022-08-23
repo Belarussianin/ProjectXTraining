@@ -1,4 +1,4 @@
-package com.example.projectxtraining.ui.training
+package com.example.projectxtraining.ui.training.onboarding
 
 import android.os.Bundle
 import android.view.LayoutInflater
