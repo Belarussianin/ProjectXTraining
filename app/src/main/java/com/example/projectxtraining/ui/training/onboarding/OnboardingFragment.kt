@@ -50,7 +50,7 @@ class OnboardingFragment : Fragment() {
         }
 
         viewPager.apply {
-            adapter = ViewPagerAdapter(requireActivity().supportFragmentManager, lifecycle)
+            adapter = ViewPagerAdapter(childFragmentManager, lifecycle)
             getChildAt(0).apply {
                 if (this is RecyclerView) setOverScrollMode(View.OVER_SCROLL_NEVER)
             }
