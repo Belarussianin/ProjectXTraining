@@ -100,9 +100,9 @@
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:backgroundTint="@color/dark_gray"
         android:text="@string/action_sign_up"
         android:textAllCaps="false"
-        app:cornerRadius="@dimen/medium_corner_radius"
         app:layout_constraintBottom_toTopOf="@+id/signInButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -117,10 +117,11 @@
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:text="@string/action_sign_in"
         android:textAllCaps="false"
-        app:cornerRadius="@dimen/medium_corner_radius"
+        android:textColor="@color/dark_gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signUpButton" />
+        app:layout_constraintTop_toBottomOf="@+id/signUpButton"
+        app:strokeColor="@color/dark_gray" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

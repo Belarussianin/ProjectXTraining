@@ -1,10 +1,12 @@
 package com.example.projectxtraining.ui.training.onboarding
 
+import android.graphics.PorterDuff
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
+import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -54,25 +56,39 @@ class OnboardingFragment : Fragment() {
             }
         }
 
+        val tabSelectedIconColor =
+            ContextCompat.getColor(requireContext(), R.color.selected_tab_icon_color)
+        val tabUnselectedIconColor = ContextCompat.getColor(requireContext(), R.color.white)
+
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.apply {
                 icon = ResourcesCompat.getDrawable(
                     resources,
                     R.drawable.dot_indicator,
                     requireContext().applicationContext.theme
-                )
+                ).apply {
+                    this?.let {
+                        val tabIconColor = when (position) {
+                            0 -> tabSelectedIconColor
+                            else -> tabUnselectedIconColor
+                        }
+                        setColorFilter(tabIconColor, PorterDuff.Mode.SRC_IN)
+                    }
+                }
             }
         }.attach()
 
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 tab?.position?.let {
+                    tab.icon?.setColorFilter(tabSelectedIconColor, PorterDuff.Mode.SRC_IN)
                     viewModel.onImageSelected(position = it)
                 }
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {
                 tab?.position?.let {
+                    tab.icon?.setColorFilter(tabUnselectedIconColor, PorterDuff.Mode.SRC_IN)
                     viewModel.onImageUnselected(position = it)
                 }
             }

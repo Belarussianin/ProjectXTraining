@@ -6,7 +6,9 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
+    <color name="selected_tab_icon_color">#CAD3E6</color>
     <color name="gray">#808080</color>
     <color name="light_gray">#d3d3d3</color>
+    <color name="dark_gray">#4D4D4D</color>
     <color name="white">#FFFFFFFF</color>
 </resources>
