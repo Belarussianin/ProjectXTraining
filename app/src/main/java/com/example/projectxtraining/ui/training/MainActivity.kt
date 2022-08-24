@@ -2,6 +2,7 @@ package com.example.projectxtraining.ui.training
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.projectxtraining.R
 import com.example.projectxtraining.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -12,6 +13,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.Theme_ProjectXTraining)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)

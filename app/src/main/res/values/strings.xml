@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ProjectX Training</string>
+    <string name="app_name">Chore Tracker</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -16,7 +16,8 @@
     <string name="onboarding_main_text2">Learn to prioritize your time</string>
     <string name="onboarding_main_text3">Take responsibility &amp; be a team player</string>
     <string name="login_main_text">Login</string>
-    <string name="login_secondary_text">Enter the login and password you use to sign in to @string/app_name</string>
+    <string name="login_secondary_text">Enter the login and password you use to sign in to Chore Tracker</string>
     <string name="login_text_field_hint">Login</string>
     <string name="password_text_field_hint">Password</string>
+    <string name="login_help_text">Forgot your password? <b><a style="text-decoration:none" href="http://www.google.com">Click for a reset link.</a></b></string>
 </resources>

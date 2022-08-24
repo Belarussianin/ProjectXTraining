@@ -3,6 +3,7 @@ package com.example.projectxtraining.ui.training.login
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.example.projectxtraining.R
 import com.example.projectxtraining.databinding.ActivityLoginBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -14,9 +15,9 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         installSplashScreen()
         super.onCreate(savedInstanceState)
+        setTheme(R.style.Theme_ProjectXTraining)
 
         binding = ActivityLoginBinding.inflate(layoutInflater)
-        setSupportActionBar(binding.toolbar)
         setContentView(binding.root)
     }
 

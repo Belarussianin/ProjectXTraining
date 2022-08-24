@@ -20,5 +20,6 @@
         <item name="windowSplashScreenAnimatedIcon">@drawable/splash_animation</item>
         <item name="postSplashScreenTheme">@style/Theme.ProjectXTraining</item>
         <item name="windowSplashScreenAnimationDuration">2000</item>
+        <item name="textAppearanceButton">@attr/textAppearanceButton</item>
     </style>
 </resources>
