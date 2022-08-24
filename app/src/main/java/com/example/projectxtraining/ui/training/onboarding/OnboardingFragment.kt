@@ -37,9 +37,14 @@ class OnboardingFragment : Fragment() {
     }
 
     private fun FragmentOnboardingBinding.bindUI() = this.apply {
+        val navController = findNavController()
+
+        signUpButton.setDebouncedOnClickListener {
+            navController.navigate(R.id.action_onboardingFragment_to_signUpFragment)
+        }
 
         signInButton.setDebouncedOnClickListener {
-            findNavController().navigate(R.id.action_onboardingFragment_to_loginFragment)
+            navController.navigate(R.id.action_onboardingFragment_to_loginFragment)
         }
 
         viewPager.apply {

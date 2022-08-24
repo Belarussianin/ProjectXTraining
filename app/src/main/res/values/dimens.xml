@@ -5,5 +5,10 @@
     <dimen name="login_small_text">12sp</dimen>
     <dimen name="login_medium_text">16sp</dimen>
     <dimen name="login_large_text">40sp</dimen>
+
+    <dimen name="sign_up_small_text">12sp</dimen>
+    <dimen name="sign_up_medium_text">16sp</dimen>
+    <dimen name="sign_up_large_text">40sp</dimen>
+
     <dimen name="medium_corner_radius">12dp</dimen>
 </resources>

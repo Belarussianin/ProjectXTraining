@@ -21,7 +21,7 @@
             android:screenOrientation="userPortrait" />
 
         <activity
-            android:name=".ui.training.login.LoginActivity"
+            android:name=".ui.training.LoginActivity"
             android:exported="true"
             android:screenOrientation="userPortrait">
             <intent-filter>
