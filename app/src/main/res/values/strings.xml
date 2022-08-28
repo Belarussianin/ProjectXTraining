@@ -19,9 +19,10 @@
     <string name="login_secondary_text">Enter the login and password you use to sign in to Chore Tracker</string>
     <string name="login_text_field_hint">Login</string>
     <string name="password_text_field_hint">Password</string>
-    <string name="login_help_text">Forgot your password? <b><a style="text-decoration:none" href="">Click for a reset link.</a></b></string>
+    <string name="login_help_text">Forgot your password? <b><a href="">Click for a reset link.</a></b></string>
     <string name="sign_up_main_text">New account</string>
     <string name="sign_up_secondary_text1">Enter the email address you will use to recover access to your Chore Tracker account. You can change it later.</string>
+    <string name="sign_up_secondary_text2">Fill in the details for your new account. This account will automatically be granted an admin role.</string>
     <string name="sign_up_help_text1">Already have an account? <b><a href="">Log in here</a></b>.</string>
     <string name="sign_up_help_text2">If continue, you accept our <b><a href="">Terms &amp; Conditions</a></b> and <b><a href="">Privacy Policy</a>.</b></string>
     <string name="email_text_field_hint">Email address</string>
