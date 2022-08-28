@@ -36,7 +36,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/content"
-            app:layout_constraintVertical_bias="0.0"
             app:layout_constraintVertical_chainStyle="packed" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -57,10 +56,8 @@
             android:layout_marginTop="@dimen/activity_vertical_margin"
             app:layout_constraintBottom_toTopOf="@+id/usernameTextField"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/signUpSecondaryText"
-            app:layout_constraintVertical_bias="0.05">
+            app:layout_constraintTop_toBottomOf="@+id/signUpSecondaryText">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -76,7 +73,6 @@
             android:layout_marginTop="@dimen/activity_vertical_margin"
             app:layout_constraintBottom_toTopOf="@+id/passwordTextField"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/emailTextField">
 
@@ -94,7 +90,6 @@
             android:layout_marginTop="@dimen/activity_vertical_margin"
             app:layout_constraintBottom_toTopOf="@+id/passwordConfirmTextField"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/usernameTextField">
 
@@ -112,7 +107,6 @@
             android:layout_marginTop="@dimen/activity_vertical_margin"
             app:layout_constraintBottom_toTopOf="@+id/signUpHelpText1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/passwordTextField">
 
@@ -161,7 +155,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/space"
-            app:layout_constraintVertical_bias="1.0"
             app:layout_constraintVertical_chainStyle="packed" />
 
         <com.google.android.material.button.MaterialButton
