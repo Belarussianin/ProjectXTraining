@@ -31,7 +31,7 @@ class LoginFragment : Fragment() {
     }
 
     private fun FragmentLoginBinding.bindUI() = this.apply {
-        toolbar.setNavigationOnClickListener {
+        toolbarLayout.toolbar.setNavigationOnClickListener {
             findNavController().apply {
                 if (!popBackStack()) {
                     navigate(R.id.action_loginFragment_to_onboardingFragment)

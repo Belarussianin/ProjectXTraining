@@ -32,7 +32,7 @@ class SignUpFragment : Fragment() {
     }
 
     private fun FragmentSignupBinding.bindUI() = this.apply {
-        toolbar.setNavigationOnClickListener {
+        toolbarLayout.toolbar.setNavigationOnClickListener {
             findNavController().apply {
                 if (!popBackStack()) {
                     navigate(R.id.action_signUpFragment_to_onboardingFragment)
@@ -40,7 +40,7 @@ class SignUpFragment : Fragment() {
             }
         }
         continueButton.setDebouncedOnClickListener {
-            
+
         }
     }
 
